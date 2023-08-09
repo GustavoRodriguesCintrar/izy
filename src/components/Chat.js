@@ -12,7 +12,7 @@ export function Chat() {
     
     const sendQuestion = useCallback(async() => {
         const response = await postQuestion("/", {user_message: question})
-        setChat([...chat, question, response])
+        setChat([...chat, question, response.content])
         setQuestion('')
     }, [question, chat])
 
